@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuadrados Cambiadores de Color</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            transition: background-color 0.3s ease;
+        }
+
+        .cuadrado {
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .cuadrado:hover {
+            transform: scale(1.1);
+        }
+
+        .cuadrado1 {
+            background-color: rgb(238, 255, 0);
+        }
+
+        .cuadrado2 {
+            background-color: rgb(245, 23, 53);
+        }
+
+        .cuadrado3 {
+            background-color: rgb(4, 0, 255);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cuadrado cuadrado1" onclick="cambiarColor(this)"></div>
+    <div class="cuadrado cuadrado2" onclick="cambiarColor(this)"></div>
+    <div class="cuadrado cuadrado3" onclick="cambiarColor(this)"></div>
+
+    <script>
+        function cambiarColor(elemento) {
+            let color = window.getComputedStyle(elemento).backgroundColor;
+            document.body.style.backgroundColor = color;
+        }
+    </script>
+
+</body>
+</html>
